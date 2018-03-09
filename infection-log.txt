@@ -1,0 +1,345 @@
+Escaped mutants:
+================
+
+Timeout mutants:
+================
+
+Killed mutants:
+===============
+
+
+1) /Users/martijngastkemper/Repositories/xdebug-infection-coverage-bug/src/MyClass.php:10    [M] IncrementInteger
+exec /usr/local/Cellar/php71/7.1.14_25/bin/php -c /private/var/folders/dr/j5s29ht501x_qzpchvy8kl3w0000gn/T/infectioniqfqgK  /Users/martijngastkemper/Repositories/xdebug-infection-coverage-bug/vendor/phpunit/phpunit/phpunit --configuration /var/folders/dr/j5s29ht501x_qzpchvy8kl3w0000gn/T/infection/phpunitConfiguration.d2f5d184e19b2cd576f1d1b1fb80ee4c.infection.xml --stop-on-failure 
+--- Original
++++ New
+@@ @@
+     {
+-        $data = [1, 2];
++        $data = [2, 2];
+         return array_sum($data);
+     }
+     public function singleLineArray()
+     {
+         $data = [3, 4];
+         return array_sum($data);
+PHPUnit 7.0.2 by Sebastian Bergmann and contributors.
+
+F
+
+Time: 22 ms, Memory: 4.00MB
+
+There was 1 failure:
+
+1) MyClassTest::testMultiLineArray
+Failed asserting that 4 is identical to 3.
+
+/Users/martijngastkemper/Repositories/xdebug-infection-coverage-bug/tests/MyClassTest.php:12
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+
+
+2) /Users/martijngastkemper/Repositories/xdebug-infection-coverage-bug/src/MyClass.php:10    [M] OneZeroInteger
+exec /usr/local/Cellar/php71/7.1.14_25/bin/php -c /private/var/folders/dr/j5s29ht501x_qzpchvy8kl3w0000gn/T/infectioniqfqgK  /Users/martijngastkemper/Repositories/xdebug-infection-coverage-bug/vendor/phpunit/phpunit/phpunit --configuration /var/folders/dr/j5s29ht501x_qzpchvy8kl3w0000gn/T/infection/phpunitConfiguration.65e206e375a5666ee7ec36615b63fa01.infection.xml --stop-on-failure 
+--- Original
++++ New
+@@ @@
+     {
+-        $data = [1, 2];
++        $data = [0, 2];
+         return array_sum($data);
+     }
+     public function singleLineArray()
+     {
+         $data = [3, 4];
+         return array_sum($data);
+PHPUnit 7.0.2 by Sebastian Bergmann and contributors.
+
+F
+
+Time: 22 ms, Memory: 4.00MB
+
+There was 1 failure:
+
+1) MyClassTest::testMultiLineArray
+Failed asserting that 2 is identical to 3.
+
+/Users/martijngastkemper/Repositories/xdebug-infection-coverage-bug/tests/MyClassTest.php:12
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+
+
+3) /Users/martijngastkemper/Repositories/xdebug-infection-coverage-bug/src/MyClass.php:14    [M] FunctionCall
+exec /usr/local/Cellar/php71/7.1.14_25/bin/php -c /private/var/folders/dr/j5s29ht501x_qzpchvy8kl3w0000gn/T/infectioniqfqgK  /Users/martijngastkemper/Repositories/xdebug-infection-coverage-bug/vendor/phpunit/phpunit/phpunit --configuration /var/folders/dr/j5s29ht501x_qzpchvy8kl3w0000gn/T/infection/phpunitConfiguration.32cc8a70fbccf1d9fa5703b716079d0b.infection.xml --stop-on-failure 
+--- Original
++++ New
+@@ @@
+         $data = [1, 2];
+-        return array_sum($data);
++        array_sum($data);
++        return null;
+     }
+     public function singleLineArray()
+     {
+         $data = [3, 4];
+         return array_sum($data);
+PHPUnit 7.0.2 by Sebastian Bergmann and contributors.
+
+F
+
+Time: 23 ms, Memory: 4.00MB
+
+There was 1 failure:
+
+1) MyClassTest::testMultiLineArray
+Failed asserting that null is identical to 3.
+
+/Users/martijngastkemper/Repositories/xdebug-infection-coverage-bug/tests/MyClassTest.php:12
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+
+
+4) /Users/martijngastkemper/Repositories/xdebug-infection-coverage-bug/src/MyClass.php:8    [M] PublicVisibility
+exec /usr/local/Cellar/php71/7.1.14_25/bin/php -c /private/var/folders/dr/j5s29ht501x_qzpchvy8kl3w0000gn/T/infectioniqfqgK  /Users/martijngastkemper/Repositories/xdebug-infection-coverage-bug/vendor/phpunit/phpunit/phpunit --configuration /var/folders/dr/j5s29ht501x_qzpchvy8kl3w0000gn/T/infection/phpunitConfiguration.a780006837c3224e134e2b94a2243432.infection.xml --stop-on-failure 
+--- Original
++++ New
+@@ @@
+ {
+-    public function multiLineArray()
++    protected function multiLineArray()
+     {
+         $data = [1, 2];
+         return array_sum($data);
+     }
+     public function singleLineArray()
+     {
+PHPUnit 7.0.2 by Sebastian Bergmann and contributors.
+
+E
+
+Time: 21 ms, Memory: 4.00MB
+
+There was 1 error:
+
+1) MyClassTest::testMultiLineArray
+Error: Call to protected method App\MyClass::multiLineArray() from context 'MyClassTest'
+
+/Users/martijngastkemper/Repositories/xdebug-infection-coverage-bug/tests/MyClassTest.php:12
+
+ERRORS!
+Tests: 1, Assertions: 0, Errors: 1.
+
+
+5) /Users/martijngastkemper/Repositories/xdebug-infection-coverage-bug/src/MyClass.php:18    [M] DecrementInteger
+exec /usr/local/Cellar/php71/7.1.14_25/bin/php -c /private/var/folders/dr/j5s29ht501x_qzpchvy8kl3w0000gn/T/infectioniqfqgK  /Users/martijngastkemper/Repositories/xdebug-infection-coverage-bug/vendor/phpunit/phpunit/phpunit --configuration /var/folders/dr/j5s29ht501x_qzpchvy8kl3w0000gn/T/infection/phpunitConfiguration.2b90c282b15b489ed456fc1b62544c62.infection.xml --stop-on-failure 
+--- Original
++++ New
+@@ @@
+     {
+-        $data = [3, 4];
++        $data = [2, 4];
+         return array_sum($data);
+     }
+ }
+
+PHPUnit 7.0.2 by Sebastian Bergmann and contributors.
+
+.F                                                                  2 / 2 (100%)
+
+Time: 22 ms, Memory: 4.00MB
+
+There was 1 failure:
+
+1) MyClassTest::testSingleLineArray
+Failed asserting that 6 is identical to 7.
+
+/Users/martijngastkemper/Repositories/xdebug-infection-coverage-bug/tests/MyClassTest.php:18
+
+FAILURES!
+Tests: 2, Assertions: 2, Failures: 1.
+
+
+6) /Users/martijngastkemper/Repositories/xdebug-infection-coverage-bug/src/MyClass.php:18    [M] IncrementInteger
+exec /usr/local/Cellar/php71/7.1.14_25/bin/php -c /private/var/folders/dr/j5s29ht501x_qzpchvy8kl3w0000gn/T/infectioniqfqgK  /Users/martijngastkemper/Repositories/xdebug-infection-coverage-bug/vendor/phpunit/phpunit/phpunit --configuration /var/folders/dr/j5s29ht501x_qzpchvy8kl3w0000gn/T/infection/phpunitConfiguration.d124ec66eb1e3444731b9884cae22c66.infection.xml --stop-on-failure 
+--- Original
++++ New
+@@ @@
+     {
+-        $data = [3, 4];
++        $data = [4, 4];
+         return array_sum($data);
+     }
+ }
+
+PHPUnit 7.0.2 by Sebastian Bergmann and contributors.
+
+.F                                                                  2 / 2 (100%)
+
+Time: 21 ms, Memory: 4.00MB
+
+There was 1 failure:
+
+1) MyClassTest::testSingleLineArray
+Failed asserting that 8 is identical to 7.
+
+/Users/martijngastkemper/Repositories/xdebug-infection-coverage-bug/tests/MyClassTest.php:18
+
+FAILURES!
+Tests: 2, Assertions: 2, Failures: 1.
+
+
+7) /Users/martijngastkemper/Repositories/xdebug-infection-coverage-bug/src/MyClass.php:18    [M] DecrementInteger
+exec /usr/local/Cellar/php71/7.1.14_25/bin/php -c /private/var/folders/dr/j5s29ht501x_qzpchvy8kl3w0000gn/T/infectioniqfqgK  /Users/martijngastkemper/Repositories/xdebug-infection-coverage-bug/vendor/phpunit/phpunit/phpunit --configuration /var/folders/dr/j5s29ht501x_qzpchvy8kl3w0000gn/T/infection/phpunitConfiguration.38aa163ecd760425ee91e09b4d83be91.infection.xml --stop-on-failure 
+--- Original
++++ New
+@@ @@
+     {
+-        $data = [3, 4];
++        $data = [3, 3];
+         return array_sum($data);
+     }
+ }
+
+PHPUnit 7.0.2 by Sebastian Bergmann and contributors.
+
+.F                                                                  2 / 2 (100%)
+
+Time: 22 ms, Memory: 4.00MB
+
+There was 1 failure:
+
+1) MyClassTest::testSingleLineArray
+Failed asserting that 6 is identical to 7.
+
+/Users/martijngastkemper/Repositories/xdebug-infection-coverage-bug/tests/MyClassTest.php:18
+
+FAILURES!
+Tests: 2, Assertions: 2, Failures: 1.
+
+
+8) /Users/martijngastkemper/Repositories/xdebug-infection-coverage-bug/src/MyClass.php:18    [M] IncrementInteger
+exec /usr/local/Cellar/php71/7.1.14_25/bin/php -c /private/var/folders/dr/j5s29ht501x_qzpchvy8kl3w0000gn/T/infectioniqfqgK  /Users/martijngastkemper/Repositories/xdebug-infection-coverage-bug/vendor/phpunit/phpunit/phpunit --configuration /var/folders/dr/j5s29ht501x_qzpchvy8kl3w0000gn/T/infection/phpunitConfiguration.869140834da2c87b6266d6d7c2d2190f.infection.xml --stop-on-failure 
+--- Original
++++ New
+@@ @@
+     {
+-        $data = [3, 4];
++        $data = [3, 5];
+         return array_sum($data);
+     }
+ }
+
+PHPUnit 7.0.2 by Sebastian Bergmann and contributors.
+
+.F                                                                  2 / 2 (100%)
+
+Time: 23 ms, Memory: 4.00MB
+
+There was 1 failure:
+
+1) MyClassTest::testSingleLineArray
+Failed asserting that 8 is identical to 7.
+
+/Users/martijngastkemper/Repositories/xdebug-infection-coverage-bug/tests/MyClassTest.php:18
+
+FAILURES!
+Tests: 2, Assertions: 2, Failures: 1.
+
+
+9) /Users/martijngastkemper/Repositories/xdebug-infection-coverage-bug/src/MyClass.php:20    [M] FunctionCall
+exec /usr/local/Cellar/php71/7.1.14_25/bin/php -c /private/var/folders/dr/j5s29ht501x_qzpchvy8kl3w0000gn/T/infectioniqfqgK  /Users/martijngastkemper/Repositories/xdebug-infection-coverage-bug/vendor/phpunit/phpunit/phpunit --configuration /var/folders/dr/j5s29ht501x_qzpchvy8kl3w0000gn/T/infection/phpunitConfiguration.4870e98bae4a3ce9404d98804443c14b.infection.xml --stop-on-failure 
+--- Original
++++ New
+@@ @@
+         $data = [3, 4];
+-        return array_sum($data);
++        array_sum($data);
++        return null;
+     }
+ }
+
+PHPUnit 7.0.2 by Sebastian Bergmann and contributors.
+
+.F                                                                  2 / 2 (100%)
+
+Time: 22 ms, Memory: 4.00MB
+
+There was 1 failure:
+
+1) MyClassTest::testSingleLineArray
+Failed asserting that null is identical to 7.
+
+/Users/martijngastkemper/Repositories/xdebug-infection-coverage-bug/tests/MyClassTest.php:18
+
+FAILURES!
+Tests: 2, Assertions: 2, Failures: 1.
+
+
+10) /Users/martijngastkemper/Repositories/xdebug-infection-coverage-bug/src/MyClass.php:17    [M] PublicVisibility
+exec /usr/local/Cellar/php71/7.1.14_25/bin/php -c /private/var/folders/dr/j5s29ht501x_qzpchvy8kl3w0000gn/T/infectioniqfqgK  /Users/martijngastkemper/Repositories/xdebug-infection-coverage-bug/vendor/phpunit/phpunit/phpunit --configuration /var/folders/dr/j5s29ht501x_qzpchvy8kl3w0000gn/T/infection/phpunitConfiguration.cca91ef2f6d9e2a63e09e6d944f7105f.infection.xml --stop-on-failure 
+--- Original
++++ New
+@@ @@
+     }
+-    public function singleLineArray()
++    protected function singleLineArray()
+     {
+         $data = [3, 4];
+         return array_sum($data);
+     }
+ }
+
+PHPUnit 7.0.2 by Sebastian Bergmann and contributors.
+
+.E                                                                  2 / 2 (100%)
+
+Time: 22 ms, Memory: 4.00MB
+
+There was 1 error:
+
+1) MyClassTest::testSingleLineArray
+Error: Call to protected method App\MyClass::singleLineArray() from context 'MyClassTest'
+
+/Users/martijngastkemper/Repositories/xdebug-infection-coverage-bug/tests/MyClassTest.php:18
+
+ERRORS!
+Tests: 2, Assertions: 1, Errors: 1.
+
+Errors mutants:
+===============
+
+Not covered mutants:
+====================
+
+
+1) /Users/martijngastkemper/Repositories/xdebug-infection-coverage-bug/src/MyClass.php:11    [M] DecrementInteger
+
+--- Original
++++ New
+@@ @@
+     {
+-        $data = [1, 2];
++        $data = [1, 1];
+         return array_sum($data);
+     }
+     public function singleLineArray()
+     {
+         $data = [3, 4];
+         return array_sum($data);
+
+2) /Users/martijngastkemper/Repositories/xdebug-infection-coverage-bug/src/MyClass.php:11    [M] IncrementInteger
+
+--- Original
++++ New
+@@ @@
+     {
+-        $data = [1, 2];
++        $data = [1, 3];
+         return array_sum($data);
+     }
+     public function singleLineArray()
+     {
+         $data = [3, 4];
+         return array_sum($data);
